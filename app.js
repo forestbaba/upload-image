@@ -24,7 +24,7 @@ app.use(connect.urlencoded());*/
 // module.exports = function(app) {
 
 
-app.get('/', function (req, res)
+app.get('/home', function (req, res)
 {
     res.end("Node-File-Upload");
 

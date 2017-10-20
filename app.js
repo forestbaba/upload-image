@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 /*app.use(express.static(__dirname + '/public'));
 app.use(connect.cookieParser());
 app.use(connect.logger('dev'));
-app.use(connect.bodyParser());
+app.use(connect.bodyParser());o
 
 app.use(connect.json());
 app.use(connect.urlencoded());*/

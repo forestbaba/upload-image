@@ -4,10 +4,11 @@ var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
 
-var port = process.env.PORT || 8080;
+// var port = process.env.PORT || 8080;
 
 // Configuration
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 /*app.use(express.static(__dirname + '/public'));
 app.use(connect.cookieParser());
 app.use(connect.logger('dev'));
@@ -54,5 +55,10 @@ app.get('/uploads/:file', function (req, res) {
 
 });
 
-app.listen(port);
-console.log('The App runs on port ' + port);
+app.listen(process.env.PORT || 8080, function()
+{
+    console.log('listening on: 8080')
+});
+
+// app.listen(port);
+// console.log('The App runs on port ' + port);

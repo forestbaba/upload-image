@@ -3,6 +3,7 @@ var connect = require('connect');
 var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
+var folder = require('./image-upload');
 
 // var port = process.env.PORT || 8080;
 
@@ -34,7 +35,9 @@ app.post('/upload', function (req, res) {
     console.log(req.files.image.path);
     fs.readFile(req.files.image.path, function (err, data) {
         var dirname = "/home/rajamalw/Node/file-upload";
-        var newPath = dirname + "/uploads/" + req.files.image.originalFilename;
+        var newPath = dirname + folder + req.files.image.originalFilename;
+
+        // var newPath = dirname + "/uploads/" + req.files.image.originalFilename;
         fs.writeFile(newPath, data, function (err) {
             if (err) {
                 res.json({'response': "Error"});
